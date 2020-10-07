@@ -1,3 +1,5 @@
+A small messenger app for robots
+
 ## Building and running on localhost
 
 First install dependencies:
@@ -12,12 +14,4 @@ To run in hot module reloading mode:
 npm start
 ```
 
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
+The app should be available on http://localhost:1234 
