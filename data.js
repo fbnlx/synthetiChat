@@ -26,7 +26,7 @@ export const users = [
   },
   {
     id: 6,
-    name: 'Your glorious self',
+    name: 'clever_username#42',
     status: 'online',
   },
 ];

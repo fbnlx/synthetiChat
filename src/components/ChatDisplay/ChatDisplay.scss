@@ -1,5 +1,4 @@
 .chat__container {
-  width: 80%;
   height: 90%;
   margin: 5px;
   background-color: white;
@@ -8,6 +7,19 @@
   scrollbar-width: thin;
   scrollbar-color: #92b0d8 #cfdbff;
   border-radius: 10px;
+  &.empty {
+    background-color: #e1e2ef;
+  }
+  .chat__empty-text {
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 240px;
+    width: 300px;
+    opacity: 0.2;
+  }
   .chat__bubble {
     display: block;
     margin: 2% 80px;

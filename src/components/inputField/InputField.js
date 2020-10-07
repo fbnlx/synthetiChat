@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage, setActiveConversation } from '../../actions/messages';
+import { sendMessage } from '../../actions/messages';
 
 import './InputField.scss';
 
@@ -17,7 +17,7 @@ const InputField = () => {
   };
 
   const handleSubmit = (evt) => {
-    if (evt.key === 'Enter') {
+    if (evt.key === 'Enter' && input && input.replace(/\s/g, '').length) {
       const newMessage = {
         id: messages.length + 1,
         content: input,

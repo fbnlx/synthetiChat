@@ -1,0 +1,47 @@
+.user__container {
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  font-family: 'Roboto Mono', monospace;
+  .user__image {
+    width: 90%;
+    object-fit: contain;
+    border: 4px solid #c6cdd6;
+    border-radius: 50px;
+    background-color: white;
+    display: block;
+  }
+  .user__name {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .user__status-container {
+    position: relative;
+    margin-top: 10px;
+    .user__status-image {
+      width: 6px;
+      height: 6px;
+      border-radius: 50px;
+      position: absolute;
+      left: -12px;
+      top: 9px;
+      &.online {
+        background-color: rgb(105, 201, 105);
+      }
+      &.away {
+        background-color: rgb(240, 185, 84);
+      }
+      &.offline {
+        background-color: rgb(119, 109, 109);
+      }
+    }
+    .user__status-text {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+  }
+}

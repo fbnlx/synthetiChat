@@ -5,11 +5,11 @@
   align-items: center;
   input {
     border: none;
-    width: 80%;
+    width: 100%;
     margin-left: 5px;
-    height: 40px;
+    height: 70%;
     font-size: 16px;
-    padding-left: 20px;
+    padding: 0 20px;
     caret-color: rgb(140, 154, 221);
     border-radius: 10px;
     &:focus {
