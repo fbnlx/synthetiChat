@@ -1,6 +1,6 @@
 A small messenger app for robots
 
-## Building and running on localhost
+## Running the app
 
 First install dependencies:
 
@@ -14,4 +14,4 @@ To run in hot module reloading mode:
 npm start
 ```
 
-The app should be available on http://localhost:1234 
+The app should then be available on http://localhost:1234 
