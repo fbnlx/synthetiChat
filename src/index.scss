@@ -5,6 +5,17 @@
 //   background-color: $bg;
 // }
 
+body {
+    margin: 0;
+    position: relative;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: #37404a;
+}
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

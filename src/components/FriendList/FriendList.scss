@@ -1,0 +1,47 @@
+.friend-list__container {
+  height: 100%;
+  width: 20%;
+  background-color: #e3e8f3;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  .friend__container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+    border-bottom: 1px solid rgb(219, 216, 216);
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(213, 227, 236);
+      font-weight: 600;
+    }
+    .friend__image {
+      width: 42px;
+      object-fit: contain;
+      border: 1px solid #afafff;
+      border-radius: 50px;
+      background-color: white;
+    }
+    .friend__status {
+      width: 6px;
+      height: 6px;
+      border-radius: 50px;
+      position: absolute;
+      right: 14px;
+      &.online {
+        background-color: rgb(105, 201, 105);
+      }
+      &.away {
+        background-color: rgb(240, 185, 84);
+      }
+      &.offline {
+        background-color: rgb(119, 109, 109);
+      }
+    }
+    .friend__name {
+      margin-left: 10px;
+    }
+  }
+}

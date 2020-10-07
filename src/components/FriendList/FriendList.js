@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { users } from '../../../data';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setActiveConversation } from '../../actions/messages';
 
 import './FriendList.scss';
 
 const FriendList = () => {
-  const [friends, setFriends] = useState([]);
+  const dispatch = useDispatch();
+  const friendList = useSelector((state) => state.user.friends);
 
-  useEffect(() => {
-    setFriends(users);
-  }, []);
+  const handleClick = (friendId) => {
+    dispatch(setActiveConversation(friendId));
+  };
 
   return (
     <div className="friend-list__container">
-      {friends &&
-        friends.map((friend) => (
-          <div className="friend__container">
+      {friendList &&
+        friendList.map((friend) => (
+          <div key={friend.id} className="friend__container" onClick={() => handleClick(friend.id)}>
+            <img className="friend__image" src={`https://robohash.org/${friend.name}`}></img>
             <span className="friend__name">{friend.name}</span>
+            <div className={`friend__status ${friend.status}`}></div>
           </div>
         ))}
     </div>
