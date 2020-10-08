@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendMessage } from '../../actions/messages';
+import { sendMessage, setActiveMessages } from '../../actions/messages';
 
 import './InputField.scss';
 
@@ -11,10 +11,20 @@ const InputField = () => {
   const user = useSelector((state) => state.user.userData);
   const activeFriend = useSelector((state) => state.message.activeConversation);
   const messages = useSelector((state) => state.message.messages);
+  const activeMessages = useSelector((state) => state.message.activeMessages);
 
   const handleInput = (evt) => {
     setInput(evt.target.value);
+    const newActiveMessage = {
+      id: activeFriend,
+      content: evt.target.value,
+    };
+    dispatch(setActiveMessages(newActiveMessage));
   };
+
+  useEffect(() => {
+    setInput(activeMessages[activeFriend] || '');
+  }, [activeFriend]);
 
   const handleSubmit = (evt) => {
     if (evt.key === 'Enter' && input && input.replace(/\s/g, '').length) {
@@ -27,6 +37,7 @@ const InputField = () => {
       };
       dispatch(sendMessage(newMessage));
       setInput('');
+      dispatch(setActiveMessages({ id: activeFriend, content: '' }));
     }
   };
 

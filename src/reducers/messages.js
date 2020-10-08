@@ -1,6 +1,11 @@
-import { SEND_MESSAGE, SET_MESSAGES, SET_ACTIVE_CONVERSATION } from '../actions/messages';
+import {
+  SEND_MESSAGE,
+  SET_MESSAGES,
+  SET_ACTIVE_CONVERSATION,
+  SET_ACTIVE_MESSAGES,
+} from '../actions/messages';
 
-const initialState = { messages: [], activeConversation: null };
+const initialState = { messages: [], activeConversation: null, activeMessages: {} };
 
 const messageReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,6 +25,13 @@ const messageReducer = (state = initialState, action) => {
       return {
         ...state,
         messages: updatedMessages,
+      };
+    case SET_ACTIVE_MESSAGES:
+      const newActiveMessages = { ...state.activeMessages };
+      newActiveMessages[action.payload.id] = action.payload.content;
+      return {
+        ...state,
+        activeMessages: newActiveMessages,
       };
     default:
       return state;
